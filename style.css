@@ -1,0 +1,149 @@
+/* makes sizing simpler */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* remove default spacing */
+/* force styling of type through styling, rather than elements */
+
+* {
+    margin: 0;
+    padding: 0;
+    font: inherit;
+}
+
+/* min body height */
+
+body {
+    min-height: 100vh;
+}
+
+/* responsive images/videos */
+img,
+picture,
+svg,
+video {
+    display: block;
+    max-width: 100%;
+}
+
+/* Remove all animations and transitions for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+html, body{
+    height: 100%;
+}
+body{
+    font-family: Arial;
+    background-color: #ccc;
+}
+/* Här är flexbox 1 */
+.container {
+    height: 100%;
+    display: flex;
+    /* Gör elementen horisontellt placerade */
+    gap: 10px;
+
+}
+
+nav {
+    width: 30%;
+        /* Navigationen tar 20% av bredden */
+    background-color: darkblue;
+    width: 400px;
+    transition: all 2s ease-out;
+    transform: translateX(-450px)
+}
+
+nav.open {
+    background-color:black;
+    display: block;
+    left:0;
+    transform: translateX(0)
+}
+
+main{
+    padding:15px;
+    flex:1;
+    background-color: #ccc;
+        display: flex;
+            /* Aktiverar Flexbox */
+            flex-direction: column;
+            /* Centrera texten i vertikal riktning */
+            justify-content: center;
+            /* Centrera texten vertikalt */
+            align-items: center;
+            /* Centrera texten horisontellt */
+}
+
+a.toggle {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    background-color: red;
+    cursor: pointer;
+    z-index: 10;
+}
+/* Här är flexbox 2 - inuti flexbox 1 - som delar upp menyn och main */
+a {
+    display: flex;
+    /* Gör barnen horisontellt placerade */
+    gap: 2;
+    /* Mellanrum mellan elementen */
+}
+
+aside {
+    width: 2%;
+    /* Sidokolumnen tar 2% av utrymmet */
+    color: gray;
+    padding: 15px;
+    margin-top: 6.5em;
+    font-size: x-small;
+}
+
+article {
+    width:50%;
+    margin-top: 4.2em;
+    padding: 10px 15px;
+    flex: 1; /* Artikeln fyller resten av tillgängligt utrymme i menyn */
+}
+a{
+    text-decoration: none;
+}
+h1{
+    font-size: 2.5em;
+    font-weight: 800;
+}
+h2{
+    padding-top:5px;
+    font-size: 1.5em;
+    color:rgb(70, 69, 69);
+}
+
+h3{
+    padding-bottom: 5px;
+    color: #ccc;
+    font-size: 1.0em;
+    font-weight: 600;
+}
+
+p{
+    color: gray;
+    font-size: 0.7em;
+}
+
+
